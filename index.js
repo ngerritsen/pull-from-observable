@@ -10,8 +10,9 @@ function pull(observable, callback) {
 
   observable.subscribe(function (event) {
     if (ready) {
-      callback(next, event)
       ready = false
+      callback(next, event)
+      return;
     }
 
     buffer.push(event)
@@ -21,8 +22,8 @@ function pull(observable, callback) {
     ready = true
 
     if (buffer.length > 0) {
-      callback(next, buffer.shift())
       ready = false
+      callback(next, buffer.shift())
     }
   }
 }
