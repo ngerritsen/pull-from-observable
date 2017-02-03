@@ -1,6 +1,6 @@
 {
   "name": "pull-from-observable",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Allows reading events from an observable in a pull-based manner.",
   "main": "index.js",
   "author": "Niels Gerritsen",
